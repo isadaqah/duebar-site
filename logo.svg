@@ -1,0 +1,51 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="120" height="120" rx="24" fill="#FFFFFF"/>
+
+<!-- Green list 1 -->
+
+<rect x="10" y="18" width="32" height="24" rx="6" fill="#34A853"/>
+<circle cx="17" cy="24" r="2" fill="white"/>
+<rect x="22" y="22" width="12" height="3" rx="1.5" fill="white"/>
+<circle cx="17" cy="30" r="2" fill="white"/>
+<rect x="22" y="28" width="10" height="3" rx="1.5" fill="white"/>
+<circle cx="17" cy="36" r="2" fill="white"/>
+<rect x="22" y="34" width="11" height="3" rx="1.5" fill="white"/>
+
+<!-- Green list 2 -->
+
+<rect x="10" y="50" width="32" height="24" rx="6" fill="#34A853"/>
+<circle cx="17" cy="56" r="2" fill="white"/>
+<rect x="22" y="54" width="12" height="3" rx="1.5" fill="white"/>
+<circle cx="17" cy="62" r="2" fill="white"/>
+<rect x="22" y="60" width="10" height="3" rx="1.5" fill="white"/>
+<circle cx="17" cy="68" r="2" fill="white"/>
+<rect x="22" y="66" width="11" height="3" rx="1.5" fill="white"/>
+
+<!-- Green list 3 -->
+
+<rect x="10" y="82" width="32" height="24" rx="6" fill="#34A853"/>
+<circle cx="17" cy="88" r="2" fill="white"/>
+<rect x="22" y="86" width="12" height="3" rx="1.5" fill="white"/>
+<circle cx="17" cy="94" r="2" fill="white"/>
+<rect x="22" y="92" width="10" height="3" rx="1.5" fill="white"/>
+<circle cx="17" cy="100" r="2" fill="white"/>
+<rect x="22" y="98" width="11" height="3" rx="1.5" fill="white"/>
+
+  <!-- Large blue master list -->
+
+  <rect x="52" y="12" width="58" height="96" rx="12" fill="#4285F4"/>
+
+  <circle cx="65" cy="30" r="4" fill="white"/>
+  <rect x="74" y="27" width="24" height="6" rx="3" fill="white"/>
+
+  <circle cx="65" cy="48" r="4" fill="white"/>
+  <rect x="74" y="45" width="18" height="6" rx="3" fill="white"/>
+
+  <circle cx="65" cy="66" r="4" fill="white"/>
+  <rect x="74" y="63" width="28" height="6" rx="3" fill="white"/>
+
+  <circle cx="65" cy="84" r="4" fill="white"/>
+  <rect x="74" y="81" width="20" height="6" rx="3" fill="white"/>
+</svg>
+
