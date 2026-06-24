@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DueBar — Google Tasks in your menu bar</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 24px;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .nav-brand img { width: 30px; height: 30px; }
+    .nav-brand span { font-size: 1rem; font-weight: 600; }
+    nav a.privacy {
+      font-size: 0.875rem;
+      color: #555;
+      text-decoration: none;
+    }
+    nav a.privacy:hover { color: #000; }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 60px 24px 48px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 480px;
+      margin: 0 auto 40px;
+    }
+    .hero-shot {
+      display: inline-block;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .hero-shot img {
+      display: block;
+      width: 260px;
+    }
+
+    /* ── Features ── */
+    .features {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+    }
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 56px;
+    }
+    .feature.reverse { flex-direction: row-reverse; }
+    .feature-shot {
+      flex: 0 0 auto;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .feature-shot img {
+      display: block;
+      width: 240px;
+    }
+    .feature-shot.wide img { width: 340px; }
+    .feature-text { flex: 1; }
+    .feature-text h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .feature-text p {
+      font-size: 0.97rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid #eee;
+      margin-top: 80px;
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #888;
+    }
+    footer a { color: #555; text-decoration: none; }
+    footer a:hover { color: #000; }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .feature, .feature.reverse { flex-direction: column; gap: 28px; }
+      .feature-shot img, .feature-shot.wide img { width: 100%; max-width: 300px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="/">
+      <img src="media/logo.png" alt="DueBar icon">
+      <span>DueBar</span>
+    </a>
+    <a class="privacy" href="/privacy.html">Privacy</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Your Google Tasks,<br>always in reach.</h1>
+    <p>A lightweight macOS menu bar app that keeps your tasks front and center — no windows, no switching.</p>
+    <div class="hero-shot">
+      <img src="media/list.png" alt="DueBar task list showing overdue and today's tasks">
+    </div>
+  </section>
+
+  <div class="features">
+
+    <div class="feature">
+      <div class="feature-shot">
+        <img src="media/mark_done.gif" alt="Marking a task as done">
+      </div>
+      <div class="feature-text">
+        <h2>Done in one click.</h2>
+        <p>Click the circle next to any task to mark it complete. It disappears instantly — no confirmation dialogs, no friction.</p>
+      </div>
+    </div>
+
+    <div class="feature reverse">
+      <div class="feature-shot wide">
+        <img src="media/reschedule.png" alt="Reschedule picker with Tomorrow, 3 days, Next week options">
+      </div>
+      <div class="feature-text">
+        <h2>Reschedule on the fly.</h2>
+        <p>Right-click any task to push it to tomorrow, three days out, or next week. Or pick a specific date — all without leaving the menu bar.</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-shot">
+        <img src="media/add_task.png" alt="Create task form with title, notes, due date, and list picker">
+      </div>
+      <div class="feature-text">
+        <h2>Add tasks without switching apps.</h2>
+        <p>Hit the compose button to create a task with a title, notes, due date, and list — then get straight back to work.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 DueBar &nbsp;&middot;&nbsp; <a href="/privacy.html">Privacy Policy</a></p>
+  </footer>
+
+</body>
+</html>
