@@ -102,23 +102,94 @@
     </tr>
   </table>
 
+  <h2>Microsoft To Do — Data Accessed</h2>
+
+  <p>When you connect Microsoft To Do, DueBar requests access via the <code>Tasks.ReadWrite</code> and <code>offline_access</code> scopes on the Microsoft Graph API. The following specific data fields are accessed:</p>
+
+  <table>
+    <tr>
+      <th>Data field</th>
+      <th>Where it comes from</th>
+      <th>Why it is accessed</th>
+    </tr>
+    <tr>
+      <td>Task list names and IDs</td>
+      <td>Microsoft Graph — <code>GET /me/todo/lists</code></td>
+      <td>To display the list of task lists the user can assign a new task to, and to fetch tasks from each list</td>
+    </tr>
+    <tr>
+      <td>Task title</td>
+      <td>Microsoft Graph — <code>GET /me/todo/lists/{listId}/tasks</code></td>
+      <td>To display each task's name in the menu bar popup</td>
+    </tr>
+    <tr>
+      <td>Task due date</td>
+      <td>Microsoft Graph — <code>GET /me/todo/lists/{listId}/tasks</code></td>
+      <td>To sort and group tasks by urgency (overdue, today, tomorrow, this week, upcoming) and display the due label next to each task</td>
+    </tr>
+    <tr>
+      <td>Task body / notes</td>
+      <td>Microsoft Graph — <code>GET /me/todo/lists/{listId}/tasks</code></td>
+      <td>To display additional context for a task when the user hovers over the notes icon</td>
+    </tr>
+    <tr>
+      <td>Task status</td>
+      <td>Microsoft Graph — <code>GET /me/todo/lists/{listId}/tasks</code></td>
+      <td>To filter out already-completed tasks so only pending tasks are shown</td>
+    </tr>
+  </table>
+
+  <h2>Microsoft To Do — Data Usage</h2>
+
+  <p>DueBar uses Microsoft user data exclusively to provide the task management features described below. No Microsoft user data is used for any other purpose, including advertising, analytics, or AI/ML model training.</p>
+
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Data read</th>
+      <th>Data written</th>
+    </tr>
+    <tr>
+      <td>Display tasks</td>
+      <td>Task title, due date, notes, status, list name</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>Mark task complete</td>
+      <td>Task ID, list ID</td>
+      <td>Sets <code>status = "completed"</code> via <code>PATCH /me/todo/lists/{listId}/tasks/{taskId}</code></td>
+    </tr>
+    <tr>
+      <td>Reschedule task</td>
+      <td>Task ID, list ID</td>
+      <td>Updates <code>dueDateTime</code> via <code>PATCH /me/todo/lists/{listId}/tasks/{taskId}</code></td>
+    </tr>
+    <tr>
+      <td>Create task</td>
+      <td>List ID (to know where to create)</td>
+      <td>Posts title, optional notes, and optional due date via <code>POST /me/todo/lists/{listId}/tasks</code></td>
+    </tr>
+  </table>
+
   <h2>Data Storage and Transmission</h2>
 
-  <p>DueBar does <strong>not</strong> transmit your Google user data to any server operated by DueBar or any third party. All data flows directly between your Mac and Google's servers. Specifically:</p>
+  <p>DueBar does <strong>not</strong> transmit your data to any server operated by DueBar or any third party. All data flows directly between your Mac and Google's or Microsoft's servers. Specifically:</p>
   <ul>
-    <li>Task data (titles, due dates, notes) is fetched from Google on demand and held only in memory while the app is running. It is never written to disk by DueBar.</li>
-    <li>OAuth access tokens and refresh tokens are stored exclusively in your Mac's secure Keychain. They are never logged, transmitted to DueBar servers, or shared with any third party.</li>
-    <li>DueBar has no backend, no analytics service, and no crash reporting service. No user data of any kind leaves your device except in API calls made directly to Google on your behalf.</li>
+    <li>Task data (titles, due dates, notes) is fetched on demand and held only in memory while the app is running. It is never written to disk by DueBar.</li>
+    <li>OAuth access tokens and refresh tokens for Google and Microsoft are stored exclusively in your Mac's secure Keychain. They are never logged, transmitted to DueBar servers, or shared with any third party.</li>
+    <li>Local Tasks data is stored only on your Mac in <code>~/Library/Application Support/DueBar/local-tasks.json</code>. It never leaves your device.</li>
+    <li>DueBar has no backend, no analytics service, and no crash reporting service. No user data of any kind leaves your device except in API calls made directly to Google or Microsoft on your behalf.</li>
   </ul>
 
   <h2>Data Sharing</h2>
-  <p>DueBar does not sell, share, license, or otherwise transfer your Google user data to any third party for any purpose.</p>
-
-  <h2>Microsoft To Do</h2>
-  <p>DueBar also optionally connects to Microsoft To Do via the Microsoft Graph API (<code>Tasks.ReadWrite</code> scope). The same principles apply: task data is fetched only to display and manage tasks within the app, is held only in memory, and is never shared or stored by DueBar outside your Mac's Keychain (for tokens).</p>
+  <p>DueBar does not sell, share, license, or otherwise transfer your data to any third party for any purpose.</p>
 
   <h2>Revoking Access</h2>
-  <p>You can sign out at any time from within the app (Settings → Accounts), which immediately removes your tokens from the Keychain. To fully revoke DueBar's access to your Google account, visit <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+  <p>You can sign out at any time from within the app (Settings → Accounts), which immediately removes your tokens from the Keychain.</p>
+  <ul>
+    <li>To fully revoke DueBar's access to your Google account, visit <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+    <li>To fully revoke DueBar's access to your Microsoft account, visit <a href="https://account.live.com/consent/Manage">account.live.com/consent/Manage</a>.</li>
+  </ul>
 
   <h2>Contact</h2>
   <p>Questions about this policy? Email <a href="mailto:duebar.skinless178@simplelogin.com">duebar.skinless178@simplelogin.com</a>.</p>
